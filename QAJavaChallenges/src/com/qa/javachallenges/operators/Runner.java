@@ -22,14 +22,14 @@ public class Runner {
 //			Results
 //			A person takes 3 exams in college, Physics, Chemistry, and Biology, each exam has a maximum of 150 marks. 
 //			When all the exam marks have been added together, we can find the overall percentage that the person has got by multiplying their score by 100 and then dividing by 450.
-			Result candidate1 = new Result (126, 145, 150);
+			Result candidate1 = new Result (125, 145, 150);
 			
 //			Create the results class, this class has 5 variables, Physics, Chemistry, and Biology, total and percentage. This class should also have 2 methods:
 
 //			Method 1 - displays the results that the person got for each exam and then the total mark. Try to make the output neat and bespoke for each exam.
 			candidate1.result1();
 //			Method 2 - which finds and displays the percentage that the person received for the exams overall.
-			candidate1.r2();
+			candidate1.result2();
 			
 		}
 }

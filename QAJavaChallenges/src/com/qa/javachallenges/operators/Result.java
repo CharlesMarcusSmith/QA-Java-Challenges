@@ -1,11 +1,13 @@
 package com.qa.javachallenges.operators;
 
+import java.text.DecimalFormat;
+
 public class Result {
 		int physics;
 		int chemistry;
 		int biology;
-		int total;
-		int percentage;
+		double total;
+		 double percentage;
 		public Result(int physics, int chemistry, int biology) {
 			super();
 			this.physics = physics;
@@ -23,7 +25,13 @@ public class Result {
 			
 		}
 		
-		public void r2() {
-			System.out.println("Percentage: " + this.percentage + "%.");
+		public void result2() {
+			DecimalFormat df = new DecimalFormat("#.#");
+			System.out.println("Percentage: " + df.format(this.percentage) + "%.");
+		}
+		
+		public void result3() {
+			
 		}
 }
+ 

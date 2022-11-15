@@ -22,6 +22,8 @@ public class Runner {
 //
 //		Expand the above so that the message that is displayed varies depending on the number of subjects that they have failed.
 
+		Result r1 = new Result(150, 150, 84);
+		
 		
 		
 //		Flowcharts
