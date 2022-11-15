@@ -7,7 +7,7 @@ public class Result {
 		int chemistry;
 		int biology;
 		double total;
-		 double percentage;
+		double percentage;
 		public Result(int physics, int chemistry, int biology) {
 			super();
 			this.physics = physics;
@@ -17,21 +17,40 @@ public class Result {
 			this.percentage = (total*100)/450;
 		}
 		
-		public void result1 () {
+		public void rm1 () {
 			System.out.println("Physics: " + this.physics + "/150.");
-			System.out.println("Chemistry: " + this.chemistry + "/150j.");
+			System.out.println("Chemistry: " + this.chemistry + "/150.");
 			System.out.println("Biology: " + this.biology + "/150.");
 			System.out.println("Total: " + this.total + "/450.");
-			
 		}
 		
-		public void result2() {
+		public void rm2() {
 			DecimalFormat df = new DecimalFormat("#.#");
 			System.out.println("Percentage: " + df.format(this.percentage) + "%.");
 		}
 		
-		public void result3() {
-			
+		public void rm3() {
+//			if(this.percentage < 60) {
+//				System.out.println("Fail");
+//				System.out.println("Reason: Overall percentage lower than 60%.");
+//			}
+			if ((this.physics*100)/150 >= 60 && (this.chemistry*100)/150 >= 60 && (this.biology*100)/150 >= 60) {
+				System.out.println("Pass");
+			}
+			else {
+				int count = 0;
+				if ((this.physics*100)/150 < 60) {
+					count++;
+				}
+				if ((this.chemistry*100)/150 < 60) {
+					count++;
+				}
+				if ((this.biology*100)/150 < 60) {
+					count++;
+				}
+				System.out.println("Fail.");
+				System.out.println(count + " subjects failed.");
+			}
 		}
 }
  

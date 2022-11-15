@@ -1,4 +1,4 @@
-package com.qa.javachallenges.operators;
+ package com.qa.javachallenges.operators;
 
 public class Runner {
 		public static void main(String[] args) {
@@ -27,9 +27,9 @@ public class Runner {
 //			Create the results class, this class has 5 variables, Physics, Chemistry, and Biology, total and percentage. This class should also have 2 methods:
 
 //			Method 1 - displays the results that the person got for each exam and then the total mark. Try to make the output neat and bespoke for each exam.
-			candidate1.result1();
+			candidate1.rm1();
 //			Method 2 - which finds and displays the percentage that the person received for the exams overall.
-			candidate1.result2();
+			candidate1.rm2();
 			
 		}
 }

@@ -23,49 +23,46 @@ public class Runner {
 //		Expand the above so that the message that is displayed varies depending on the number of subjects that they have failed.
 
 		Result r1 = new Result(150, 150, 84);
-		
+		r1.rm1();
+		r1.rm2();
+		r1.rm3();
 		
 		
 //		Flowcharts
 //		Create a method which accepts 3 parameters, 2 integers and a boolean.
-//
+
 //		If the boolean is true, the method will return a sum of the two numbers, and it if is false it will return the multiplication of the two numbers.
 //		For example:
-//
+		Flow flow = new Flow();
 //		Input (1, 2, true) -> 3
+		System.out.println(flow.fm1(1,2, true));
 //		Input (3, 3, false) -> 9
+		System.out.println(flow.fm1(3,3, false));
 //		Input (1, 1, true) -> 2
+		System.out.println(flow.fm1(1,1, true));
 //		Recreate the following flowchart as a project. Ensure that your logic and outputs match that of the flowchart.
-//		ConditionalFlowChartExercise
-//
-//		Create a method that takes a single integer A as a parameter.
-//
-//		First evaluate if A is greater than 2000. If true, print "A", if false, print "1"
-//
-//		Next, Directly under print 1 but not outside of the if statement, make another if statement that elaluates if A is greater that 100. If true, print "2", if false, print "3"
-//
-//		And so on. Be sure to check you are nesting the new if statements in the correct place.
 //
 //		BlackJack
+		BlackJack jack = new BlackJack();
 //		Given 2 integer values greater than 0, return whichever is closest to 21 without going over 21. If they both go over 21 then return 0.
 //
 //		 play (10, 21) -> 21
+		System.out.println(jack.bjm1(10, 21));
 //		 play (20, 18) -> 20
+		System.out.println(jack.bjm1(20, 18));
 //		 play (1, 22) -> 1
+		System.out.println(jack.bjm1(1, 22));
 //		 play (22, 23) -> 0
-//		Unique Sum
-//		Given 3 integer values, return their sum. If one value is the same as another value, they do not count towards the sum. In other words, only return the sum of unique numbers given.
-//
-//		 Input(1, 2, 3) -> 6
-//		 Input(3, 3, 3) -> 0
-//		 Input(1, 1, 2) -> 2
+		System.out.println(jack.bjm1(22, 23));
+		
+
 //		Taxes
 //		Create the tax class, it contains 2 methods.
-//
+		Tax tax = new Tax();
 //		Method 1 - which takes a salary and works out the percentage by which the salary will be taxed.
-//
+		System.out.println(tax.tm1(75000) + "%.");
 //		Method 2 - which works out the exact amount that the user will be taxed using a similar process to that in the first method. That amount should be returned and output to the console.
-//
+		System.out.println(tax.tm2(75000));
 //		These 2 methods should be able to work independently, so it is fine in this case if some of the code is repeated.*
 //
 //		The salaries are taxed as below:
@@ -75,11 +72,26 @@ public class Runner {
 //		20,000 - 29,999 : 15% tax
 //		30,000 - 44,999 : 20% tax
 //		45,000+ : 25% tax
-//		Finally combine the 2 methods so that the second method utilizes the first method to return the correct result.
-//
+
+		
+		
+
 //		FizzBuzz
 //		Create a method which returns 'Fizz' for multiples of three and 'Buzz' for the multiples of five.
 //		Return 'FizzBuzz' for numbers which are multiples of both three and five.
 //		Return the input number for numbers that are neither.
+		FizzBuzz fizz = new FizzBuzz();
+		System.out.println(fizz.fbm1(1));
+		System.out.println(fizz.fbm1(2));
+		System.out.println(fizz.fbm1(3));
+		System.out.println(fizz.fbm1(4));
+		System.out.println(fizz.fbm1(5));
+		System.out.println(fizz.fbm1(6));
+		System.out.println(fizz.fbm1(14));
+		System.out.println(fizz.fbm1(15));
+		
+		
+		
+		
 	}
 }
