@@ -1,4 +1,4 @@
-package com.qa.javachellenges.iterations;
+package com.qa.javachallenges.iterations;
 
 public class ChangeCalc {
 	public double ccm1(double cash, double charge) {

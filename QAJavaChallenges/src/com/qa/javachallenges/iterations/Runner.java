@@ -1,4 +1,4 @@
-package com.qa.javachellenges.iterations;
+package com.qa.javachallenges.iterations;
 
 public class Runner {
 //	Given a cost and an amount, work out the change given in specific coinage.
