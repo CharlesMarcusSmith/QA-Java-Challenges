@@ -2,7 +2,7 @@ package com.qa.javachallenges.conditionals;
 
 public class BlackJack {
 	public int bjm1(int a, int b) {
-		if (a != 0 && b != 0) {
+		if (a >= 1 && b >= 1) {
 			if(a <= 21 && b <= 21) {
 				if (a > b) {
 					return a;

@@ -1,23 +1,23 @@
 package com.qa.javachallenges.operators;
 
 public class Calculator {
-	public int addition (int a, int b) {
+	public int addition(int a, int b) {
 		int ab = a + b;
 		return ab;
 	}
 	
-	public int subtraction (int a, int b) {
+	public int subtraction(int a, int b) {
 		int ab = a - b;
 		return ab;
 	}
 	
-	public int multiplication (int a, int b) {
+	public int multiplication(int a, int b) {
 		int ab = a * b;
 		return ab;
 	}
 	
-	public double division (double a, double b) {
-		if(a < b) {
+	public double division(double a, double b) {
+		if(a > b) {
 			double ab = a / b;
 			return ab;
 		}

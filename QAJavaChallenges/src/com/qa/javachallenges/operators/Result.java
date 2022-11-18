@@ -17,7 +17,7 @@ public class Result {
 			this.percentage = (total*100)/450;
 		}
 		
-		public void rm1 () {
+		public void rm1() {
 			System.out.println("Physics: " + this.physics + "/150.");
 			System.out.println("Chemistry: " + this.chemistry + "/150.");
 			System.out.println("Biology: " + this.biology + "/150.");
