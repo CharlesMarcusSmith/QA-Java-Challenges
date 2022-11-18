@@ -10,7 +10,6 @@ public class Runner {
 	public static void main(String[] args) {
 		ChangeCalc ccalc = new ChangeCalc();
 		ccalc.ccm2a(ccalc.ccm1(20.00, 4.58));
-		ccalc.ccm3(ccalc.ccm1(20.00, 4.58));
 	}
 	
 }
