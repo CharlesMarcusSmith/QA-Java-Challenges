@@ -21,6 +21,7 @@ public class Runner {
 		num.numm2assembly(num.numm2a(6015));
 		num.numm2assembly(num.numm2a(5));
 		num.numm2assembly(num.numm2a(13));
+		num.numm2assembly(num.numm2a(1030));
 //		Create a second method that when given the number 1-99 returns a String representation of this number, for example 1 = one, 11 = eleven, 21 = twenty-one.
 //		Expand on the method you wrote in step 2 to allow the input 1-999.
 //		Expand the method you wrote in step 2 to allow the input 1-9999.

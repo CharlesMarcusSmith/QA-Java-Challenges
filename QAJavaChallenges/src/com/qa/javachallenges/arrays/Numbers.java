@@ -83,11 +83,12 @@ public class Numbers {
 		//This is a counter used to count how many digits are being verbalised, meaning we dont have to write multiple methods for different digit sized numbers
 		//E.g. a 4 digit number will use all 4 digits so we need to move the counter every time, but a 2 digit number will only have to move the counter twice
 		//This is to avoid the issue of the beginning of the number always beginning at the 0 position of the array list, without having to make multiple methods for each size
-		int dc = 0;	
+		
+		int dc = 0;	//count used for digits array position pointer
 		boolean aN = false; //used to check if the "and" is needed, only needed for numbers 3-4 digits long
 		
 		if(digits.size() >= 4) {
-			if(digits.get(0+dc) != 0) {
+			if(digits.get(dc) != 0) {
 				System.out.print(numm2unit(digits.get(0+dc)-1) + " thousand "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
 				aN = true;
 			}
@@ -101,36 +102,37 @@ public class Numbers {
 			dc++;
 		}
 		
-		if(aN == true) { 
-			System.out.print("and "); //used to seperate wording like you typically would when saying a big number, i.e. 'five thousand and five'.
+		// "and" functionality
+		if(aN == true && digits.get(dc) != 0 && digits.get(dc+1) != 0) { 
+			System.out.print("and "); //used to separate wording like you typically would when saying a big number, i.e. 'five thousand and five'.
 		}
 		
 		if(digits.size() >= 2) {
-			if(digits.get(0+dc) != 1) {
+			if(digits.get(dc) != 1) {
 				//Tens and Units in here
-				if(digits.get(0+dc) != 0) {
-				System.out.print(numm2tens(digits.get(0+dc)-2) + " "); 
+				if(digits.get(dc) != 0) {
+				System.out.print(numm2tens(digits.get(dc)-2) + " "); 
 				//This is -2 as there is no String for 10, this is handled by the teens array
 				
 				}
 				
 				dc++;
 				
-				if(digits.get(0+dc) != 0) {
-					System.out.println(numm2unit(digits.get(0+dc)-1) + "."); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+				if(digits.get(dc) != 0) {
+					System.out.println(numm2unit(digits.get(dc)-1) + "."); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
 					//println used as the last line in the sequence - allows multiple iterations with multiple numbers.
 				}
 			}
 			else {
 				dc++; //we need to count to the next position in the array, as we have already accounted for the 1.
-				System.out.println(numm2teen(digits.get(0+dc)) + "."); //pointer is correctly placed already, list position 0 = "ten".
+				System.out.println(numm2teen(digits.get(dc)) + "."); //pointer is correctly placed already, list position 0 = "ten".
 				//printl used as the last line in the sequence - allows multiple iterations with multiple numbers.
 				
 			}
 		}
 		//Functionality for single digit numbers:
 		if(digits.size() == 1) {
-			System.out.println(numm2unit(digits.get(0+dc)-1) + "."); 
+			System.out.println(numm2unit(digits.get(dc)-1) + "."); 
 		}
 		System.out.println(""); //for console cleanliness.
 	}
