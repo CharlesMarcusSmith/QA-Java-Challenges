@@ -123,10 +123,15 @@ public class Numbers {
 			}
 			else {
 				dc++; //we need to count to the next position in the array, as we have already accounted for the 1.
-				System.out.println(numm2teen(digits.get(0+dc)) + "."); 
+				System.out.println(numm2teen(digits.get(0+dc)) + "."); //pointer is correctly placed already, list position 0 = "ten".
 				//printl used as the last line in the sequence - allows multiple iterations with multiple numbers.
 				
 			}
 		}
+		//Functionality for single digit numbers:
+		if(digits.size() == 1) {
+			System.out.println(numm2unit(digits.get(0+dc)-1) + "."); 
+		}
+		System.out.println(""); //for console cleanliness.
 	}
 }
