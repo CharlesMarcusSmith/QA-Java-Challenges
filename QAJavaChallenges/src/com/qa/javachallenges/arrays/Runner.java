@@ -1,7 +1,7 @@
 package com.qa.javachallenges.arrays;
 
 public class Runner {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Exercises ex = new Exercises();
 		
 //		1 Create an array that will hold 10 integer values, populate the array with values, then call and output each element.
@@ -14,7 +14,10 @@ public class Runner {
 		Numbers num = new Numbers();
 //		Create a method that takes a number 10-99, and adds the two digits together for example 74 = 7 + 4 = 11.
 		num.numm1(63);
-		
+		num.numm2assembly(num.numm2a(63));
+		num.numm2assembly(num.numm2a(6345));
+		num.numm2assembly(num.numm2a(6005));
+		num.numm2assembly(num.numm2a(6015));
 //		Create a second method that when given the number 1-99 returns a String representation of this number, for example 1 = one, 11 = eleven, 21 = twenty-one.
 //		Expand on the method you wrote in step 2 to allow the input 1-999.
 //		Expand the method you wrote in step 2 to allow the input 1-9999.

@@ -85,23 +85,41 @@ public class Numbers {
 		int dc = 0;	
 		
 		if(digits.size() >= 4) {
-			System.out.print(numm2unit(digits.get(0+dc)) + " thousand "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
-			dc++;
+			if(digits.get(0+dc) != 0) {
+				System.out.print(numm2unit(digits.get(0+dc)-1) + " thousand "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+				dc++;
+			}
 		}
 		if(digits.size() >= 3) {
-			System.out.print(numm2unit(digits.get(0+dc)) + " hundred and "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
-			dc++;
+			if(digits.get(0+dc) != 0) {
+				System.out.print(numm2unit(digits.get(0+dc)-1) + " hundred "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+				dc++;
+			}
 		}
 		
+		System.out.println("and "); //used to seperate wording like you typically would when saying a big number, i.e. 'five thousand and five'.
+		
 		if(digits.size() >= 2) {
-			if(digits.get(0+dc) > 1) {
+			if(digits.get(0+dc) != 1) {
 				//Tens and Units in here
-				System.out.print(numm2tens(digits.get(0+dc)) + " "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+				if(digits.get(0+dc) != 0) {
+				System.out.print(numm2tens(digits.get(0+dc)-2) + " "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+				//This is -2 as there is no String for 10, this is handled by the teens array
+				
+				}
+				
 				dc++;
-				System.out.print(numm2unit(digits.get(0+dc)) + "."); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+				
+				if(digits.get(0+dc) != 0) {
+					System.out.println(numm2unit(digits.get(0+dc)-1) + "."); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+					//println used as the last line in the sequence - allows multiple iterations with multiple numbers.
+				}
 			}
 			else {
-				System.out.print(numm2teen(digits.get(0+dc)) + "."); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+				if(digits.get(0+dc) != 0) {
+					System.out.println(numm2teen(digits.get(0+dc)-1) + "."); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+					//println used as the last line in the sequence - allows multiple iterations with multiple numbers.
+				}
 			}
 		}
 	}
