@@ -62,6 +62,7 @@ public class Numbers {
 		
 		return units.get(digit);
 	}
+	
 	public String numm2teen (int digit) {
 		//10 - 19, so if second to last digit = 1, this is used.
 		List<String> teens = new ArrayList<>();
@@ -87,23 +88,23 @@ public class Numbers {
 		if(digits.size() >= 4) {
 			if(digits.get(0+dc) != 0) {
 				System.out.print(numm2unit(digits.get(0+dc)-1) + " thousand "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
-				dc++;
 			}
+			dc++;
 		}
 		if(digits.size() >= 3) {
 			if(digits.get(0+dc) != 0) {
-				System.out.print(numm2unit(digits.get(0+dc)-1) + " hundred "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
-				dc++;
+				System.out.print(numm2unit(digits.get(0+dc)-1) + " hundred "); 
 			}
+			dc++;
 		}
 		
-		System.out.println("and "); //used to seperate wording like you typically would when saying a big number, i.e. 'five thousand and five'.
+		System.out.print("and "); //used to seperate wording like you typically would when saying a big number, i.e. 'five thousand and five'.
 		
 		if(digits.size() >= 2) {
 			if(digits.get(0+dc) != 1) {
 				//Tens and Units in here
 				if(digits.get(0+dc) != 0) {
-				System.out.print(numm2tens(digits.get(0+dc)-2) + " "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+				System.out.print(numm2tens(digits.get(0+dc)-2) + " "); 
 				//This is -2 as there is no String for 10, this is handled by the teens array
 				
 				}
@@ -116,10 +117,10 @@ public class Numbers {
 				}
 			}
 			else {
-				if(digits.get(0+dc) != 0) {
-					System.out.println(numm2teen(digits.get(0+dc)-1) + "."); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
-					//println used as the last line in the sequence - allows multiple iterations with multiple numbers.
-				}
+				dc++; //we need to count to the next position in the array, as we have already accounted for the 1.
+				System.out.println(numm2teen(digits.get(0+dc)) + "."); 
+				//println used as the last line in the sequence - allows multiple iterations with multiple numbers.
+				
 			}
 		}
 	}
