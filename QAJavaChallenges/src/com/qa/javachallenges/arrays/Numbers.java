@@ -30,7 +30,7 @@ public class Numbers {
 //	For example; 1 = one, 100 = one hundred.
 	
 	//Storing number provided as digits
-	public List<Integer> numm2a(int value) {
+	public List<Integer> numm2a(int value) throws Exception {
 		List<Integer> digits = new ArrayList<>();		
 		if(value > 0 && value <= 9999) {
 			//Splitting digits up using modulus to get remainder of each
@@ -50,7 +50,8 @@ public class Numbers {
 			return digits;
 		}
 		else {
-			return 0;	//Need to create an exception here to avoid returning a list
+			//Need to create an exception here to avoid returning a list
+			throw new Exception("Number must be between 1 and 9999");
 		}
 	}
 	//Creating String representations and methods to return the position in the array in question
@@ -77,7 +78,31 @@ public class Numbers {
 		return tens.get(digit);
 	}
 	
-//	public void numm2assembly (List<Integer> digits) {
-//		
-//	}
+	public void numm2assembly (List<Integer> digits) {
+		//This is a counter used to count how many digits are being verbalised, meaning we dont have to write multiple methods for different digit sized numbers
+		//E.g. a 4 digit number will use all 4 digits so we need to move the counter every time, but a 2 digit number will only have to move the counter twice
+		//This is to avoid the issue of the beginning of the number always beginning at the 0 position of the array list, without having to make multiple methods for each size
+		int dc = 0;	
+		
+		if(digits.size() >= 4) {
+			System.out.print(numm2unit(digits.get(0+dc)) + " thousand "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+			dc++;
+		}
+		if(digits.size() >= 3) {
+			System.out.print(numm2unit(digits.get(0+dc)) + " hundred and "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+			dc++;
+		}
+		
+		if(digits.size() >= 2) {
+			if(digits.get(0+dc) > 1) {
+				//Tens and Units in here
+				System.out.print(numm2tens(digits.get(0+dc)) + " "); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+				dc++;
+				System.out.print(numm2unit(digits.get(0+dc)) + "."); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+			}
+			else {
+				System.out.print(numm2teen(digits.get(0+dc)) + "."); //dc will be 0 in this case, but was included for potential future functionality as no harm done.
+			}
+		}
+	}
 }
